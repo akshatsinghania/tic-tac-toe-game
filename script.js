@@ -4,7 +4,7 @@ selectXBtn = selectBox.querySelector(".playerX");
 selectOBtn = selectBox.querySelector(".playerO");
 playBoard = document.querySelector(".play-board");
 allBox = document.querySelectorAll("section span");
-players = document.querySelectorAll(".players");
+players = document.querySelector(".players");
 
 window.onload = () => {
   //once window loaded
@@ -24,7 +24,7 @@ window.onload = () => {
   };
 };
 let playerXIcon = "fas fa-times"; //classname of fontawesome cross icon
-let playerOIcon = "far fa-circle"; //classname of fontawesome circle
+let playerOIcon = "far fa-circle"; //classname of fontawesome circle icon
 
 function clickedBox(element) {
   // if(){}

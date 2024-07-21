@@ -116,9 +116,9 @@ body {
   transition: all 0.3s ease;
 }
 .players.active span:first-child {
-  color: 56baed;
+  color: #56baed;
 }
-.players.active span:last-child {
+.players.active span:nth-child(2) {
   color: #fff;
 }
 .players.active .slider {
