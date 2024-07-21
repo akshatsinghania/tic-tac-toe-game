@@ -14,6 +14,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
 }
 .select-box {
   background: #fff;
@@ -21,7 +22,12 @@ body {
   border-radius: 5px;
   max-width: 330px;
   width: 100%;
-  display: none;
+  transition: all 0.3s ease;
+}
+.select-box.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
 }
 .select-box header {
   font-size: 23px;
@@ -62,7 +68,14 @@ body {
   margin-left: 5px;
 }
 .play-board {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.play-board.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
 .play-board .details {
   background: #fff;
@@ -124,6 +137,7 @@ body {
   border-radius: 5px;
   max-width: 350px;
   width: 100%;
+  display: none;
 }
 .result-box .won-text {
   font-size: 25px;
