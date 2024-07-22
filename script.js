@@ -38,7 +38,11 @@ function clickedBox(element) {
     players.classList.add("active");
   }
   element.style.pointerEvents = "none"; //once user select any box then that box cant be selected again
-  bot();
+  let randomDelayTime = (Math.random() * 1000 + 200).toFixed(); //generating randomly time delay to select box
+
+  setTimeout(() => {
+    bot(); // calling bot function
+  }, randomDelayTime);
 }
 
 //bot click function
@@ -51,7 +55,7 @@ function bot() {
     }
   }
   let randomBox = array[Math.floor(Math.random() * array.length)]; //getting random index from array so bot will select
-  console.log(randomBox);
+
   if (array.length > 0) {
     if (players.classList.contains("player")) {
       //if players element has contains .player
@@ -62,5 +66,5 @@ function bot() {
       players.classList.add("active");
     }
   }
-  //console.log(array);
+  allBox[randomBox].style.pointerEvents = "none"; //once bot  select a box  than user cant select or click that box
 }
