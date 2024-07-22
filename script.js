@@ -25,17 +25,22 @@ window.onload = () => {
 };
 let playerXIcon = "fas fa-times"; //classname of fontawesome cross icon
 let playerOIcon = "far fa-circle"; //classname of fontawesome circle icon
+let playerSign = "X"; //suppose player will be X
 
 //user clicked function
 function clickedBox(element) {
   //console.log(element);
   if (players.classList.contains("player")) {
     //if players element has contains .player
+
     element.innerHTML = `<i class="${playerOIcon}"></i>`;
     players.classList.add("active");
+    playerSign = "0";
+    element.setAttribute("id", playerSign);
   } else {
     element.innerHTML = `<i class="${playerXIcon}"></i>`; //adding circle icon tag inside user clicked elemen
     players.classList.add("active");
+    element.setAttribute("id", playerSign);
   }
   element.style.pointerEvents = "none"; //once user select any box then that box cant be selected again
   let randomDelayTime = (Math.random() * 1000 + 200).toFixed(); //generating randomly time delay to select box
@@ -47,6 +52,7 @@ function clickedBox(element) {
 
 //bot click function
 function bot() {
+  playerSign = "0";
   let array = [];
   for (let i = 0; i < allBox.length; i++) {
     if (allBox[i].childElementCount == 0) {
@@ -60,11 +66,18 @@ function bot() {
     if (players.classList.contains("player")) {
       //if players element has contains .player
       allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`;
-      players.classList.add("active");
+      players.classList.remove("active");
+      playerSign = "X";
+      allBox[randomBox].setAttribute("id", playerSign);
     } else {
       allBox[randomBox].innerHTML = `<i class="${playerOIcon}"></i>`; //adding circle icon tag inside user clicked elemen
-      players.classList.add("active");
+      players.classList.remove("active");
+      allBox[randomBox].setAttribute("id", playerSign);
     }
   }
   allBox[randomBox].style.pointerEvents = "none"; //once bot  select a box  than user cant select or click that box
+}
+//let work on select the winner
+function getId(){
+  return document.querySelector
 }
