@@ -28,7 +28,7 @@ let playerOIcon = "far fa-circle"; //classname of fontawesome circle icon
 
 //user clicked function
 function clickedBox(element) {
-  console.log(element);
+  //console.log(element);
   if (players.classList.contains("player")) {
     //if players element has contains .player
     element.innerHTML = `<i class="${playerOIcon}"></i>`;
@@ -50,5 +50,17 @@ function bot() {
       console.log(i + " " + "has no children");
     }
   }
-  console.log(array);
+  let randomBox = array[Math.floor(Math.random() * array.length)]; //getting random index from array so bot will select
+  console.log(randomBox);
+  if (array.length > 0) {
+    if (players.classList.contains("player")) {
+      //if players element has contains .player
+      allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`;
+      players.classList.add("active");
+    } else {
+      allBox[randomBox].innerHTML = `<i class="${playerOIcon}"></i>`; //adding circle icon tag inside user clicked elemen
+      players.classList.add("active");
+    }
+  }
+  //console.log(array);
 }
