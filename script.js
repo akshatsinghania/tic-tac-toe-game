@@ -20,12 +20,35 @@ window.onload = () => {
   selectOBtn.onclick = () => {
     selectBox.classList.add("hide"); //hide the select box on playerO button clicked
     playBoard.classList.add("show"); //show the playboard section  on playerO button clicked
-    players.setAttribute("class", "players active");
+    players.setAttribute("class", "players active player"); //adding three classname in player element
   };
 };
 let playerXIcon = "fas fa-times"; //classname of fontawesome cross icon
 let playerOIcon = "far fa-circle"; //classname of fontawesome circle icon
 
+//user clicked function
 function clickedBox(element) {
-  // if(){}
+  console.log(element);
+  if (players.classList.contains("player")) {
+    //if players element has contains .player
+    element.innerHTML = `<i class="${playerOIcon}"></i>`;
+    players.classList.add("active");
+  } else {
+    element.innerHTML = `<i class="${playerXIcon}"></i>`; //adding circle icon tag inside user clicked elemen
+    players.classList.add("active");
+  }
+  element.style.pointerEvents = "none"; //once user select any box then that box cant be selected again
+  bot();
+}
+
+//bot click function
+function bot() {
+  let array = [];
+  for (let i = 0; i < allBox.length; i++) {
+    if (allBox[i].childElementCount == 0) {
+      array.push(i);
+      console.log(i + " " + "has no children");
+    }
+  }
+  console.log(array);
 }
