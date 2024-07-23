@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tic-tac-toe</title>
+    <title>Tic-Tac-Toe-Game</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
   </head>
   <body>
@@ -15,13 +15,14 @@
     <div class="select-box">
       <header>Tic Tac Toe</header>
       <div class="content">
-        <div class="title">Select which you want to be ?</div>
+        <div class="title">Select which you want to be?</div>
         <div class="options">
-          <button class="playerX">player(X)</button>
-          <button class="playerO">player(O)</button>
+          <button class="playerX">Player (X)</button>
+          <button class="playerO">Player (O)</button>
         </div>
       </div>
     </div>
+
     <!-- playboard section -->
     <div class="play-board">
       <div class="details">
@@ -37,13 +38,11 @@
           <span class="box2"></span>
           <span class="box3"></span>
         </section>
-
         <section>
           <span class="box4"></span>
           <span class="box5"></span>
           <span class="box6"></span>
         </section>
-
         <section>
           <span class="box7"></span>
           <span class="box8"></span>
@@ -54,15 +53,10 @@
 
     <!-- result box -->
     <div class="result-box">
-      <div class="won-text">
-        Player
-        <p>X</p>
-        Won the Match!
-      </div>
-      <div class="btn">
-        <button>Replay</button>
-      </div>
+      <div class="won-text"></div>
+      <div class="btn"><button>Replay</button></div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
